@@ -1,6 +1,6 @@
 # Screenshot selection and publication guide
 
-All captures show the actual A11yLens 1.1.0 interface with the current A11Y aperture mark. Findings are from a real local integration-fixture scan, not a customer website or a fabricated success story. Publish that context beneath the gallery. Do not present fixture totals as adoption, performance, or customer-impact metrics.
+All captures show the actual A11yLens 1.1.0 interface with the current A11y lens mark. Findings are from a fresh scan of the Tech Book Store public catalog, not a customer website or a fabricated success story. Publish that context beneath the gallery. Do not present fixture totals as adoption, performance, or customer-impact metrics.
 
 ## Recommended order
 
@@ -14,7 +14,7 @@ All captures show the actual A11yLens 1.1.0 interface with the current A11Y aper
 | 01-home.png | Product introduction or closing visual | A11yLens URL-first home with its blue LENS identity and developer attribution. |
 | 08-dark-overview.png | Optional theme comparison | The same evidence workflow in dark mode. |
 | 09-mobile.png | Optional responsive detail | A11yLens home adapted to a narrow mobile viewport. |
-| 02-scope.png | Optional workflow detail | Scope selection supports the current page, discovered pages, or selected URLs. This setup illustration uses example.com; it is not a scan of that domain. |
+| 02-scope.png | Optional workflow detail | Scope selection supports the current page, discovered pages, or selected URLs. The current-page scope targets the Tech Book Store public catalog. |
 
 Use five key images in the public story; place the remaining four behind “More product views.” Screenshot 05 is intentionally an inspector crop, not an altered app screen. All crops are generated directly from actual UI elements.
 
@@ -31,4 +31,4 @@ Use five key images in the public story; place the remaining four behind “More
 
 ## Provenance
 
-See `capture-provenance.json`. The scan totals and evidence were not modified. The only persisted fixture state was in a separate headless browser context; existing user audits were not changed.
+See `capture-provenance.json`. The scan totals and evidence were not modified. The only persisted scan state was in a separate headless browser context; existing user audits were not changed.

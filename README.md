@@ -25,7 +25,7 @@ Automated checks support accessibility reviews; they do not establish WCAG confo
 
 ### Accessibility Overview
 
-![Accessibility overview with impact counts and prioritized rules from a controlled local scan](docs/screenshots/03-overview.png)
+![Accessibility overview with impact counts and prioritized rules from the Tech Book Store scan](docs/screenshots/03-overview.png)
 
 <table>
   <tr><td width="70%"><strong>Element Evidence</strong></td><td width="30%"><strong>Mobile View</strong></td></tr>
@@ -55,7 +55,9 @@ Automated checks support accessibility reviews; they do not establish WCAG confo
 
 </details>
 
-Screenshots show the actual application. Findings come from a real scan of a controlled local fixture, not customer results. The page-selection screenshot uses example.com only as a setup illustration; that domain was not scanned. See [capture provenance](docs/screenshots/capture-provenance.json).
+Screenshots show a fresh scan of **Tech Book Store**, a local practice storefront, at `http://127.0.0.1:4400/techbookstore-shop.html`. Both tools inspect the same public catalog page in desktop and mobile viewports. These are actual recorded results using seeded book data, not customer results or a full-store accessibility evaluation. See [capture provenance](docs/screenshots/capture-provenance.json) and the [exported report](docs/demo/tech-book-store-report.html).
+
+The captured A11yLens run records 2,080 rule–element observations. Minor violations and needs-review observations are shown separately from passes.
 
 ## Main Features
 

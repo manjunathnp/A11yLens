@@ -26,7 +26,7 @@ Primary CTA: **Explore A11yLens**. Secondary CTA within the product overview: **
 
 **Thumbnail:** `screenshots/03-overview.png`
 
-**Thumbnail alt:** A11yLens overview showing impact counts, prioritized accessibility rules, and scan coverage from a local demonstration fixture.
+**Thumbnail alt:** A11yLens overview showing impact counts, prioritized accessibility rules, and scan coverage from a Tech Book Store catalog.
 
 ## Full Product Overview — Paste-ready
 

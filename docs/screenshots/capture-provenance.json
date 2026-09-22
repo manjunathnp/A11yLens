@@ -1,10 +1,29 @@
 {
-  "capturedAt": "2026-09-16T14:32:29.972Z",
+  "capturedAt": "2026-09-22T02:43:06.288Z",
+  "application": "Tech Book Store",
+  "target": "http://127.0.0.1:4400/techbookstore-shop.html",
+  "scope": "Public storefront, current page, desktop and mobile viewports",
+  "source": "Fresh scan through the actual application UI. No findings, counters, markup or result data modified.",
+  "scanDate": "2026-09-22T02:42:46.872Z",
+  "pages": [
+    "http://127.0.0.1:4400/techbookstore-shop.html"
+  ],
+  "observations": 2080,
+  "statuses": {
+    "minor": 2,
+    "review": 63,
+    "pass": 2015
+  },
+  "limitations": "Local practice application with seeded catalog data. Not customer results or a full-store audit. Mobile is a browser viewport, not a physical device.",
+  "tool": "A11yLens",
   "appVersion": "1.1.0",
-  "source": "Actual running A11yLens UI. Results loaded from a real local integration-fixture scan; no finding values or DOM evidence modified.",
-  "scanDate": "2026-09-16T13:52:28.005Z",
-  "fixtureURL": "http://127.0.0.1:65164/",
-  "scopeScreenshot": "Setup illustration using example.com; no scan of example.com was performed.",
-  "observations": 114,
-  "findings": 22
+  "coverageNotes": [
+    {
+      "key": "http://127.0.0.1:4400/techbookstore-shop.html|Interaction could not be checked|Open bookstore assistant",
+      "page": "http://127.0.0.1:4400/techbookstore-shop.html",
+      "reason": "Interaction could not be checked",
+      "detail": "Open bookstore assistant"
+    }
+  ],
+  "galleryFilter": "All checks; result data unchanged."
 }

@@ -14,7 +14,7 @@ Open `index.html` in a browser. All images, the product mark, and the font are l
 - `PRODUCT-CONTENT.md` — Tools card, full product narrative, engineering details, SEO copy, and publication guidance.
 - `SCREENSHOT-GUIDE.md` — recommended image order, captions, alt text, and publication notes.
 - `screenshots/` — actual UI captures with the current A11y lens mark, including the app's developer footer.
-- `capture-provenance.json` — origin of the real local-fixture scan shown in screenshots.
+- `capture-provenance.json` — origin of the real Tech Book Store scan shown in screenshots.
 - `assets/` — product SVG, Geist font, and font license.
 
 ## Integration

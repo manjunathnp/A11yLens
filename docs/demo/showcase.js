@@ -3,7 +3,7 @@ const steps=[
  ['IMPACT','03-overview.png','Know Where to Start.','Separate critical, serious, moderate, and minor violations from checks needing review. Prioritized rules give the investigation a clear starting point.','Actual accessibility overview with impact counts and prioritized rules from a Tech Book Store catalog.'],
  ['ISSUE QUEUE','04-issue-queue.png','Narrow the Investigation.','Filter by impact, rule, page, and viewport. The affected selector stays close to the finding so you can locate the element.','Issue queue with affected selectors, severities and filters.'],
  ['EVIDENCE','05-evidence.png','Understand the Next Step.','Inspect the page, frame, selector, markup, observed states, and rule-specific guidance in one evidence view.','Evidence inspector with remediation guidance and recorded markup.'],
- ['COVERAGE','06-coverage.png','Account for What Was Checked.','Page coverage and manual-testing guidance stay part of the result. Automated passes do not establish accessibility conformance.','Page coverage and manual-testing checklist.'],
+ ['COVERAGE','06-coverage.png','See the Review Scope.','Page and viewport coverage stay connected to the result, with focused guidance for keyboard, screen-reader, content, and journey review.','Page coverage and manual-review guidance.'],
  ['EXPORTS','07-exports.png','Make the Handoff Useful.','Choose interactive HTML, PDF, CSV, or JSON. Keep coverage and evidence available to the people reviewing the work.','Export dialog with HTML, PDF, CSV and JSON choices.']
 ];
 let selected=0;const tabs=[...document.querySelectorAll('[data-step]')];

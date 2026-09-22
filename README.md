@@ -5,6 +5,12 @@
   <p>Identify Accessibility Barriers, Understand their Impact, and Get Evidence-Based Guidance to Address them.</p>
   <p><a href="#installation">Installation</a> · <a href="#how-to-use-a11ylens">How to use</a> · <a href="#reports">Reports</a> · <a href="#testing">Testing</a> · <a href="#product-demo">Product demo</a></p>
   <sub>Version 1.1.0 · Node.js 20+ · Playwright with Chromium · axe-core</sub>
+  <p>
+    <a href="CHANGELOG.md"><img alt="Version 1.1.0" src="https://img.shields.io/badge/version-1.1.0-E1C788?style=flat-square&labelColor=4A4A4A"></a>
+    <a href="#requirements"><img alt="Node.js 20 or newer" src="https://img.shields.io/badge/Node.js-20%2B-43853D?style=flat-square&logo=node.js&logoColor=white&labelColor=4A4A4A"></a>
+    <a href="#testing"><img alt="Tested with Playwright" src="https://img.shields.io/badge/tested_with-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white&labelColor=4A4A4A"></a>
+    <a href="docs/demo/index.html"><img alt="Explore the Tech Book Store demo" src="https://img.shields.io/badge/explore-Tech_Book_Store_Demo-385A9E?style=flat-square&labelColor=4A4A4A"></a>
+  </p>
 </div>
 
 ---
@@ -15,13 +21,13 @@ A11yLens is a local accessibility inspection workspace for developers, testers, 
 
 Part of the LENS collection alongside LinkLens and [ImageLens](https://github.com/manjunathnp/ImageLens), it brings page selection, severity triage, element evidence, coverage, and report sharing into one workflow. It supports public websites and browser-based sign-in for authenticated pages.
 
-Automated checks support accessibility reviews; they do not establish WCAG conformance.
+Automated findings provide a strong starting point for accessibility review and work alongside keyboard, screen-reader, content, and journey testing.
 
 ## Screenshots
 
 ### Home
 
-![A11yLens home with URL entry, the A11y lens logo, workflow, and developer credit](docs/screenshots/01-home.png)
+![A11yLens home with URL entry, the A11y lens logo, and the accessibility review workflow](docs/screenshots/01-home.png)
 
 ### Accessibility Overview
 
@@ -50,12 +56,9 @@ Automated checks support accessibility reviews; they do not establish WCAG confo
 ### Dark Mode
 ![Accessibility overview in dark mode](docs/screenshots/08-dark-overview.png)
 
-### Developer Credit
-![Developed By Manjunath N P with website, LinkedIn, and GitHub links](docs/screenshots/10-developer-footer.png)
-
 </details>
 
-Screenshots show a fresh scan of **Tech Book Store**, a local practice storefront, at `http://127.0.0.1:4400/techbookstore-shop.html`. Both tools inspect the same public catalog page in desktop and mobile viewports. These are actual recorded results using seeded book data, not customer results or a full-store accessibility evaluation. See [capture provenance](docs/screenshots/capture-provenance.json) and the [exported report](docs/demo/tech-book-store-report.html).
+Screenshots show a fresh scan of **Tech Book Store**, a local practice storefront, at `http://127.0.0.1:4400/techbookstore-shop.html`. The public catalog was reviewed in desktop and mobile viewports using seeded book data. See [capture provenance](docs/screenshots/capture-provenance.json) and the [exported report](docs/demo/tech-book-store-report.html).
 
 The captured A11yLens run records 2,080 rule–element observations. Minor violations and needs-review observations are shown separately from passes.
 
@@ -100,7 +103,7 @@ PORT=4201 npm start
 
 In PowerShell: `$env:PORT=4201; npm start`.
 
-The server binds to `127.0.0.1`; this is a local application, not a hosted public scanning service.
+The server binds to `127.0.0.1`, keeping the scanning workspace on your computer.
 
 ## How to Use A11yLens
 
@@ -122,10 +125,10 @@ Credentials are entered on the target website, not in the A11yLens dashboard. Us
 | Impact | Critical, serious, moderate, and minor violations using the engine's impact classification |
 | Needs review | Incomplete results kept separate from automatic failures and passes |
 | Evidence | Rule, selector, markup, page, frame, viewport, observed states, and remediation guidance |
-| Coverage | Navigation failures, incomplete frame scans, exploration limits, and manual-review guidance |
+| Coverage | Navigation outcomes, frame checks, exploration scope, and manual-review guidance |
 | Browser states | Supported disclosures, tabs, scrolling, open shadow DOM, and accessible frames |
 
-Counts represent rule–element observations per viewport. Unchanged results across explored states are merged while retaining their observed state names. A pass applies to a particular rule and element; it does not certify a page. The outcome chart represents recorded observations, **not a compliance score**. Best-practice checks are distinguished from WCAG rules. Reports record the engine version and tags.
+Counts represent rule–element observations per viewport. Unchanged results across explored states are merged while retaining their observed state names. Each pass remains connected to its rule, element, page, and viewport. The outcome chart summarizes the recorded observations, while coverage and manual-review guidance provide the wider evaluation context. Best-practice checks are distinguished from WCAG rules. Reports record the engine version and tags.
 
 ## Reports
 
@@ -147,15 +150,15 @@ Full exports include all observations regardless of dashboard filters. Reports c
 - The browser stores the latest ten audits. Storage failures show an export reminder.
 - Scanning sends browser requests to the target site and its resources.
 
-## Limits
+## Scan Scope and Coverage
 
-- Discovery is bounded to 200 pages and 3,000 queued URLs and follows same-origin anchors.
-- Each page uses at most 24 scroll steps and 16 interaction attempts.
-- Page navigation has a 20-second timeout.
-- “All pages” means pages discovered within these limits, not every route or state in an application.
-- Mobile inspection uses viewport sizes, not a physical phone or a complete cross-browser test.
-- Closed shadow roots, complex journeys, forms, screen-reader behavior, content meaning, media, and complete processes need human review.
-- Traversal blocks non-read request methods and known action URLs and skips form controls and known destructive labels. These heuristics may block POST-based read APIs and cannot guarantee that arbitrary GET endpoints have no effects.
+- Each run can discover up to 200 same-origin pages and maintain a queue of up to 3,000 URLs.
+- Per-page exploration includes up to 24 scroll steps and 16 supported interactions, keeping larger reviews predictable.
+- Page navigation uses a 20-second response window and records pages that need follow-up.
+- “All pages” represents every page discovered during the selected run, with the selected URLs and viewport coverage preserved in the report.
+- Mobile inspection adds a 390 × 844 viewport perspective; teams can extend it with physical-device and cross-browser testing when those environments matter.
+- The manual-review checklist helps teams continue with keyboard, screen-reader, content, media, and complete-journey evaluation.
+- Safe traversal focuses on read-oriented interactions and avoids forms and action-oriented controls, making it suitable for authorized review environments.
 
 ## Testing
 
@@ -169,11 +172,11 @@ npm run test:design
 
 The integration suite covers real axe findings, viewport coverage, shadow DOM, disclosures, deduplication, navigation failures, setup, filtering, evidence, exports, cancellation, and dashboard/report accessibility checks. Scenario tests cover authentication storage, password settings, redirects, refresh recovery, closed-session recovery, and storage exhaustion. Design checks cover themes, responsive layouts, keyboard tabs, focus restoration, enlarged text, and system preferences.
 
-Artifacts go to ignored `test-output/`. See [scenario validation](VALIDATION.md), [design validation](DESIGN-VALIDATION.md), and [technical notes](docs/TECHNICAL-NOTES.md) for supporting detail. Automated checks do not replace a full manual accessibility evaluation.
+Artifacts go to ignored `test-output/`. See [scenario validation](VALIDATION.md), [design validation](DESIGN-VALIDATION.md), and [technical notes](docs/TECHNICAL-NOTES.md) for supporting detail. The automated suites and manual review guidance complement one another.
 
 ## Product Demo
 
-The [standalone product demo](docs/demo/README.md) includes a home-first presentation, six-step interactive screenshot tour, dark/mobile views, product copy, screenshot guidance, and developer links. Open `docs/demo/index.html` locally, or serve the folder with a static web server. It is a walkthrough, not a live scanner.
+The [standalone product demo](docs/demo/README.md) includes a home-first presentation, a six-step interactive screenshot tour, dark and mobile views, and the Tech Book Store report. Open `docs/demo/index.html` locally or serve the folder with a static web server.
 
 ## Project Files
 
@@ -209,11 +212,3 @@ See [CHANGELOG.md](CHANGELOG.md).
 ## License
 
 Copyright © 2026 Manjunath N P. All rights reserved. See [LICENSE.md](LICENSE.md). Dependencies and bundled fonts retain their respective licenses.
-
-## Author
-
-**Developed By Manjunath N P**
-
-- Website: [manjunathnp.in](https://manjunathnp.in)
-- LinkedIn: [linkedin.com/in/manjunathnp](https://www.linkedin.com/in/manjunathnp/)
-- GitHub: [github.com/manjunathnp](https://github.com/manjunathnp)

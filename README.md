@@ -23,6 +23,16 @@ Part of the LENS collection alongside LinkLens and [ImageLens](https://github.co
 
 Automated findings provide a strong starting point for accessibility review and work alongside keyboard, screen-reader, content, and journey testing.
 
+## The LENS Trio
+
+The LENS Trio shares a visual system and an evidence-first approach across three focused quality tools.
+
+| Product | Focus | Repository |
+| --- | --- | --- |
+| **A11yLens** | Accessibility audit evidence, issue triage, element inspection, and coverage review | [github.com/manjunathnp/A11yLens](https://github.com/manjunathnp/A11yLens) |
+| **LinkLens** | Link integrity, destination verification, access conditions, and navigation evidence | [github.com/manjunathnp/LinkLens](https://github.com/manjunathnp/LinkLens) |
+| **ImageLens** | Image integrity, responsive resources, text alternatives, and visual evidence | [github.com/manjunathnp/ImageLens](https://github.com/manjunathnp/ImageLens) |
+
 ## Screenshots
 
 ### Home

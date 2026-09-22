@@ -1,0 +1,20 @@
+{
+  "name": "a11ylens",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local accessibility auditing workspace with axe-core",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/integration.mjs",
+    "test:scenarios": "node validation/reproduce.mjs",
+    "test:design": "node tests/design-system.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.63.0",
+    "axe-core": "^4.13.0"
+  }
+}

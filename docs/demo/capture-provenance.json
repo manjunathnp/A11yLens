@@ -1,0 +1,10 @@
+{
+  "capturedAt": "2026-09-16T14:32:29.972Z",
+  "appVersion": "1.1.0",
+  "source": "Actual running A11yLens UI. Results loaded from a real local integration-fixture scan; no finding values or DOM evidence modified.",
+  "scanDate": "2026-09-16T13:52:28.005Z",
+  "fixtureURL": "http://127.0.0.1:65164/",
+  "scopeScreenshot": "Setup illustration using example.com; no scan of example.com was performed.",
+  "observations": 114,
+  "findings": 22
+}

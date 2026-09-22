@@ -1,0 +1,64 @@
+[
+  {
+    "scenario": "Redirect followed by disclosure",
+    "expected": "Expanded button is audited after same-origin redirect",
+    "observed": {
+      "found": true,
+      "gaps": []
+    },
+    "passed": true
+  },
+  {
+    "scenario": "Password settings page",
+    "expected": "Password change field does not mark whole page unverified",
+    "observed": {
+      "states": [
+        "checked",
+        "checked"
+      ],
+      "gaps": []
+    },
+    "passed": true
+  },
+  {
+    "scenario": "Session-storage authentication",
+    "expected": "Confirmed browser authentication survives scanning",
+    "observed": {
+      "found": true,
+      "states": [
+        "checked",
+        "checked"
+      ],
+      "gaps": []
+    },
+    "passed": true
+  },
+  {
+    "scenario": "Refresh while scanning",
+    "expected": "One completed saved report after refresh",
+    "observed": {
+      "records": 1,
+      "activeJob": null,
+      "requestId": "809f7069-188d-46a4-8964-65f42f6b63c6"
+    },
+    "passed": true
+  },
+  {
+    "scenario": "Closed sign-in browser retry",
+    "expected": "Offer a fresh sign-in browser after session closes",
+    "observed": {
+      "error": "The sign-in window was closed or expired. Open a new session.",
+      "button": "Open sign-in browser"
+    },
+    "passed": true
+  },
+  {
+    "scenario": "Storage full on completion",
+    "expected": "Show persistent unsaved report warning and allow export",
+    "observed": {
+      "warning": "Report not saved. Browser storage is full or unavailable. Export it before closing this tab.",
+      "exportVisible": true
+    },
+    "passed": true
+  }
+]
